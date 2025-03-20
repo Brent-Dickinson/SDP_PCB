@@ -1,0 +1,77 @@
+For a KiCad PCB project, you'll want a specialized .gitignore file that handles KiCad's specific temporary and backup files. Here's how to create a repository with an appropriate .gitignore for KiCad:
+Create a KiCad-specific .gitignore
+
+Open Git Bash in your KiCad project directory in VS Code
+Run this command to create a comprehensive .gitignore for KiCad:
+
+bashCopycat > .gitignore << 'EOL'
+# KiCad backup files
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups/
+*-bak
+_autosave-*
+*~
+*auto_saved_files*
+*.tmp
+*-cache.lib
+*-rescue.lib
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+
+# Netlist files
+*.net
+
+# BOM files
+*.xml
+*.csv
+
+# Gerber output
+**/gerber/**
+**/*-gerber/**
+**/*-gerbers/**
+
+# Drill files
+*.drl
+
+# Footprint info cache
+fp-info-cache
+
+# Autosave files
+_autosave-*
+
+# 3D renders
+**/renders/**
+
+# For PCBs designed using KiCad: https://www.kicad.org/
+# Format documentation: https://kicad.org/help/file-formats/
+
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl
+*.sch-bak
+*~
+_autosave-*
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+
+# Netlist files (exported from Eeschema)
+*.net
+
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
+
+# Exported BOM files
+*.xml
+*.csv
+EOL
